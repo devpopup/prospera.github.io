@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prospera Credit | Financial Empowerment & Inclusion</title>
+    <meta name="description" content="Prospera Credit provides accessible and affordable credit solutions to empower entrepreneurs and drive financial inclusion across Nigeria.">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configure Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Main brand colors
+                        primary: {
+                            50: "#e0f7fa",
+                            100: "#b2ebf2",
+                            200: "#80deea",
+                            300: "#4dd0e1",
+                            400: "#26c6da",
+                            500: "#00bcd4",
+                            600: "#0891b2", // Main primary color
+                            700: "#0288d1",
+                            800: "#0277bd",
+                            900: "#01579b",
+                        },
+                        // Warm gold/yellow for prosperity
+                        prosperity: {
+                            50: "#fff9e6",
+                            100: "#ffefc0",
+                            200: "#ffe499",
+                            300: "#ffd966",
+                            400: "#ffc933",
+                            500: "#ffbf00", // Main prosperity color
+                            600: "#e6ac00",
+                            700: "#cc9900",
+                            800: "#b38600",
+                            900: "#996600",
+                        },
+                        // Green for growth
+                        growth: {
+                            50: "#e8f5e9",
+                            100: "#c8e6c9",
+                            200: "#a5d6a7",
+                            300: "#81c784",
+                            400: "#66bb6a",
+                            500: "#4caf50", // Main growth color
+                            600: "#43a047",
+                            700: "#388e3c",
+                            800: "#2e7d32",
+                            900: "#1b5e20",
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'medium': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md transition-all duration-300 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-24 items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="text-3xl font-bold text-cyan-600">
+                        Prospera Credit
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-cyan-600 text-lg font-medium">
+                        Home
+                    </a>
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-cyan-600 px-0 text-lg flex items-center" id="about-dropdown-btn">
+                            About Us
+                            <i class="fas fa-chevron-down ml-1 h-5 w-5 transition-transform"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-10 hidden" id="about-dropdown">
+                            <a href="about.html" class="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 text-base">
+                                Who We Are
+                            </a>
+                            <a href="about.html#board" class="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 text-base">
+                                Board of Directors
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-cyan-600 px-0 text-lg flex items-center" id="products-dropdown-btn">
+                            Products
+                            <i class="fas fa-chevron-down ml-1 h-5 w-5 transition-transform"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-10 hidden" id="products-dropdown">
+                            <a href="products.html#quick-loan" class="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 text-base">
+                                Quick Loan
+                            </a>
+                            <a href="products.html#payday-loan" class="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 text-base">
+                                Payday Loan
+                            </a>
+                        </div>
+                    </div>
+                    <a href="careers.html" class="text-gray-700 hover:text-cyan-600 text-lg font-medium">
+                        Careers
+                    </a>
+                    <a href="faqs.html" class="text-gray-700 hover:text-cyan-600 text-lg font-medium">
+                        FAQs
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-cyan-600 text-lg font-medium">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-cyan-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden bg-white shadow-lg hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50">
+                    Home
+                </a>
+                <div class="relative">
+                    <button id="mobile-about-btn" class="w-full text-left px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 flex justify-between items-center">
+                        About Us
+                        <i class="fas fa-chevron-down h-5 w-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-about-dropdown" class="pl-4 space-y-1 hidden">
+                        <a href="about.html" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-600 hover:text-cyan-600 hover:bg-cyan-50">
+                            Who We Are
+                        </a>
+                        <a href="about.html#board" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-600 hover:text-cyan-600 hover:bg-cyan-50">
+                            Board of Directors
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button id="mobile-products-btn" class="w-full text-left px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 flex justify-between items-center">
+                        Products
+                        <i class="fas fa-chevron-down h-5 w-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-products-dropdown" class="pl-4 space-y-1 hidden">
+                        <a href="products.html#quick-loan" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-600 hover:text-cyan-600 hover:bg-cyan-50">
+                            Quick Loan
+                        </a>
+                        <a href="products.html#payday-loan" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-600 hover:text-cyan-600 hover:bg-cyan-50">
+                            Payday Loan
+                        </a>
+                    </div>
+                </div>
+                <a href="careers.html" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50">
+                    Careers
+                </a>
+                <a href="faqs.html" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50">
+                    FAQs
+                </a>
+                <a href="contact.html" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="font-sans">
+        <!-- Hero Section -->
+        <section class="relative py-24 bg-gradient-to-r from-primary-700 to-primary-500 text-white">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-3xl">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Financial Solutions for Your Growth</h1>
+                    <p class="text-xl mb-8">
+                        Discover our range of tailored loan products designed to empower your business and fuel your success.
+                    </p>
+                    <a href="products.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all bg-white text-primary-600 hover:bg-gray-100 px-4 py-2">
+                        Explore Our Products
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Us Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-10">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Who We Are</h2>
+                        <p class="text-xl text-gray-600 mb-4">
+                            Prospera Credit is a forward-thinking lending company based in Nigeria,
+                            dedicated to driving financial inclusion and economic empowerment.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-6">
+                            We specialize in providing accessible and affordable credit solutions to
+                            low-income individuals, rural communities, micro and small enterprises (MSMEs),
+                            and women-led businesses.
+                        </p>
+                        <div class="mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Micro, small and medium loans</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Women-focused enterprise lending</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Rural credit outreach programs</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Business development support</p>
+                            </div>
+                        </div>
+                        <a href="about.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all border border-primary-600 text-primary-600 hover:bg-primary-50 px-4 py-2">
+                            Learn More About Us <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    <div class="lg:w-1/2 relative">
+                        <div class="aspect-square max-w-md relative rounded-2xl overflow-hidden mx-auto shadow-medium">
+                            <div class="bg-primary-50 w-full h-full flex items-center justify-center">
+                                <span class="text-lg text-primary-600">Team Image</span>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-prosperity-500 text-white p-6 rounded-xl shadow-medium max-w-xs">
+                            <h3 class="text-xl font-bold mb-2">Our Mission</h3>
+                            <p class="text-sm">To drive financial inclusion, empower entrepreneurs, and alleviate poverty through innovative credit solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Core Values</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        The principles that guide everything we do at Prospera Credit
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-users h-8 w-8 text-primary-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Inclusion</h3>
+                        <p class="text-gray-600">We champion access to credit facilities for all businesses, especially the underserved.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-line h-8 w-8 text-primary-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Empowerment</h3>
+                        <p class="text-gray-600">We empower individuals and businesses to achieve financial independence and growth.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-lightbulb h-8 w-8 text-primary-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Innovation</h3>
+                        <p class="text-gray-600">We leverage technology and creativity to design solutions that meet unique community needs.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-shield-alt h-8 w-8 text-primary-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Integrity</h3>
+                        <p class="text-gray-600">We are committed to transparency, fairness, and responsible lending practices.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-heart h-8 w-8 text-primary-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Impact</h3>
+                        <p class="text-gray-600">We measure our success by the positive, lasting impact we create in the communities we serve.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Loan Products</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Flexible financial solutions tailored to your business needs
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="bg-primary-50 rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 bg-primary-600 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-xl font-bold">1</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Business Loan</h3>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Loan amounts from ₦100,000 up to ₦10 million</p>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Monthly/Weekly repayment at 4% interest rate</p>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">1-6 month flexible duration</p>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Minimal documentation required</p>
+                            </li>
+                        </ul>
+                        <a href="products.html#quick-loan" class="w-full inline-block text-center bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md">Apply Now</a>
+                    </div>
+                    
+                    <div class="bg-prosperity-50 rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 bg-prosperity-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-xl font-bold">2</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Daily Loan</h3>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-prosperity-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Quick access to funds for daily business needs</p>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-prosperity-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">10% interest rate</p>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-prosperity-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Short 20-day duration</p>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-prosperity-600 mr-2 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Same-day application processing</p>
+                            </li>
+                        </ul>
+                        <a href="products.html#payday-loan" class="w-full inline-block text-center border border-prosperity-500 text-prosperity-600 hover:bg-prosperity-50 px-4 py-2 rounded-md">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loan Calculator Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="bg-white rounded-2xl shadow-medium overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <div class="p-10 lg:p-16">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6">Loan Calculator</h2>
+                            <p class="text-xl text-gray-600 mb-8">
+                                Calculate your potential loan repayments and find the plan that works for you.
+                            </p>
+                            <div class="space-y-6 mb-8">
+                                <div>
+                                    <label class="block text-gray-700 mb-2 font-medium">Loan Amount (₦)</label>
+                                    <input 
+                                        type="range" 
+                                        id="loan-amount"
+                                        min="100000" 
+                                        max="10000000" 
+                                        step="50000"
+                                        value="1000000"
+                                        class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                                    />
+                                    <div class="flex justify-between mt-2 text-sm text-gray-500">
+                                        <span>₦100,000</span>
+                                        <span id="amount-display">₦1,000,000</span>
+                                        <span>₦10,000,000</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 mb-2 font-medium">Loan Duration (Months)</label>
+                                    <input 
+                                        type="range" 
+                                        id="loan-duration"
+                                        min="1" 
+                                        max="6" 
+                                        step="1"
+                                        value="3"
+                                        class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                                    />
+                                    <div class="flex justify-between mt-2 text-sm text-gray-500">
+                                        <span>1 Month</span>
+                                        <span id="duration-display">3 Months</span>
+                                        <span>6 Months</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-700 mb-2 font-medium">Repayment Frequency</label>
+                                    <div class="grid grid-cols-3 gap-4">
+                                        <button class="py-2 px-4 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 focus:ring-2 focus:ring-primary-600 focus:ring-opacity-50 repayment-btn" data-value="daily">
+                                            Daily
+                                        </button>
+                                        <button class="py-2 px-4 bg-primary-600 text-white rounded-lg hover:bg-primary-700 focus:ring-2 focus:ring-primary-600 focus:ring-opacity-50 repayment-btn active" data-value="weekly">
+                                            Weekly
+                                        </button>
+                                        <button class="py-2 px-4 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 focus:ring-2 focus:ring-primary-600 focus:ring-opacity-50 repayment-btn" data-value="monthly">
+                                            Monthly
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-primary-50 p-6 rounded-xl">
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <p class="text-gray-600 text-sm">Repayment Amount</p>
+                                        <p class="text-2xl font-bold text-gray-800" id="repayment-amount">₦173,333</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-600 text-sm">Total Repayment</p>
+                                        <p class="text-2xl font-bold text-gray-800" id="total-repayment">₦1,040,000</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-600 text-sm">Interest Rate</p>
+                                        <p class="text-2xl font-bold text-gray-800">4%</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-gray-600 text-sm">Total Interest</p>
+                                        <p class="text-2xl font-bold text-gray-800" id="total-interest">₦40,000</p>
+                                    </div>
+                                </div>
+                                <a href="apply.html" class="w-full inline-block text-center bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-md">Apply For This Loan</a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-primary-600 p-10 lg:p-16 flex items-center">
+                            <div class="text-white">
+                                <h3 class="text-3xl font-bold mb-6">Why Choose Prospera Credit?</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-white mr-3 flex-shrink-0 mt-1"></i>
+                                        <div>
+                                            <p class="font-bold text-lg">Quick Disbursement</p>
+                                            <p>Receive your loan within 1-3 business days after document submission</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-white mr-3 flex-shrink-0 mt-1"></i>
+                                        <div>
+                                            <p class="font-bold text-lg">Minimal Requirements</p>
+                                            <p>Just a verifiable business and valid identification</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-white mr-3 flex-shrink-0 mt-1"></i>
+                                        <div>
+                                            <p class="font-bold text-lg">Flexible Repayment</p>
+                                            <p>Choose daily, weekly, or monthly repayment schedules</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-white mr-3 flex-shrink-0 mt-1"></i>
+                                        <div>
+                                            <p class="font-bold text-lg">No Hidden Fees</p>
+                                            <p>Transparent fee structure with no surprise charges</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-white mr-3 flex-shrink-0 mt-1"></i>
+                                        <div>
+                                            <p class="font-bold text-lg">Early Repayment Option</p>
+                                            <p>Pay off your loan faster with no penalties</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Success Stories</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Hear from entrepreneurs who have grown their businesses with Prospera Credit
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300">
+                        <div class="flex flex-col items-center">
+                            <div class="w-20 h-20 relative rounded-full overflow-hidden mb-4 bg-primary-50 flex items-center justify-center">
+                                <i class="fas fa-user text-primary-300 text-4xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Amina Ibrahim</h3>
+                            <p class="text-gray-600 mb-6">Fashion Retailer, Lagos</p>
+                            <p class="text-gray-700 text-center italic">"The business loan from Prospera helped me expand my inventory. My sales have increased by 40% since the expansion."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300">
+                        <div class="flex flex-col items-center">
+                            <div class="w-20 h-20 relative rounded-full overflow-hidden mb-4 bg-primary-50 flex items-center justify-center">
+                                <i class="fas fa-user text-primary-300 text-4xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Emmanuel Okonkwo</h3>
+                            <p class="text-gray-600 mb-6">Food Vendor, Akure</p>
+                            <p class="text-gray-700 text-center italic">"I was able to purchase better equipment and hire two assistants. The application process was simple and the team was very helpful."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300">
+                        <div class="flex flex-col items-center">
+                            <div class="w-20 h-20 relative rounded-full overflow-hidden mb-4 bg-primary-50 flex items-center justify-center">
+                                <i class="fas fa-user text-primary-300 text-4xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Blessing Adeyemi</h3>
+                            <p class="text-gray-600 mb-6">Beauty Salon Owner, Ondo</p>
+                            <p class="text-gray-700 text-center italic">"As a woman entrepreneur, I appreciate how Prospera understood my business needs. The loan helped me open a second location."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-prosperity-500">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Grow Your Business?</h2>
+                <p class="text-xl text-white opacity-90 max-w-3xl mx-auto mb-10">
+                    Apply for a Prospera Credit loan today and take the next step toward financial success.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="apply.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all bg-white text-prosperity-600 hover:bg-gray-100 px-4 py-2">
+                        Apply For a Loan
+                    </a>
+                    <a href="contact.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all border border-white text-white hover:bg-prosperity-600 px-4 py-2">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Branch Locations Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Branches</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Visit us at any of our locations across Ondo State
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="border border-gray-200 rounded-xl p-6 hover:border-primary-600 hover:shadow-soft transition-all duration-300">
+                        <h3 class="text-xl font-bold text-primary-600 mb-3">Akure</h3>
+                        <p class="text-gray-700 mb-4">102, Oyemekun Road, Opposite Oyemekun Grammar School, Akure</p>
+                        <p class="text-gray-600">
+                            <span class="font-medium">Phone:</span> 07076612860
+                        </p>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-xl p-6 hover:border-primary-600 hover:shadow-soft transition-all duration-300">
+                        <h3 class="text-xl font-bold text-primary-600 mb-3">Ondo</h3>
+                        <p class="text-gray-700 mb-4">Main Street, Ondo Town</p>
+                        <p class="text-gray-600">
+                            <span class="font-medium">Phone:</span> 07076612860
+                        </p>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-xl p-6 hover:border-primary-600 hover:shadow-soft transition-all duration-300">
+                        <h3 class="text-xl font-bold text-primary-600 mb-3">Ore</h3>
+                        <p class="text-gray-700 mb-4">Benin-Sagamu Expressway, Ore</p>
+                        <p class="text-gray-600">
+                            <span class="font-medium">Phone:</span> 07076612860
+                        </p>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-xl p-6 hover:border-primary-600 hover:shadow-soft transition-all duration-300">
+                        <h3 class="text-xl font-bold text-primary-600 mb-3">Okitipupa</h3>
+                        <p class="text-gray-700 mb-4">Central Area, Okitipupa</p>
+                        <p class="text-gray-600">
+                            <span class="font-medium">Phone:</span> 07076612860
+                        </p>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-xl p-6 hover:border-primary-600 hover:shadow-soft transition-all duration-300">
+                        <h3 class="text-xl font-bold text-primary-600 mb-3">Igbokoda</h3>
+                        <p class="text-gray-700 mb-4">Waterfront Road, Igbokoda</p>
+                        <p class="text-gray-600">
+                            <span class="font-medium">Phone:</span> 07076612860
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer CTA -->
+        <section class="py-10 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-gray-600 mb-4">Have questions about our loans?</p>
+                <a href="faqs.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all border border-gray-300 text-gray-700 hover:bg-gray-100 px-4 py-2">
+                    Visit Our FAQ Section
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Prospera Credit</h3>
+                    <p class="text-gray-300 mb-4">
+                        Driving financial inclusion and economic empowerment through innovative credit solutions.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://facebook.com" class="text-gray-300 hover:text-primary-500 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com" class="text-gray-300 hover:text-primary-500 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com" class="text-gray-300 hover:text-primary-500 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com" class="text-gray-300 hover:text-primary-500 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="about.html" class="text-gray-300 hover:text-white transition-colors">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products.html" class="text-gray-300 hover:text-white transition-colors">
+                                Our Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="careers.html" class="text-gray-300 hover:text-white transition-colors">
+                                Careers
+                            </a>
+                        </li>
+                        <li>
+                            <a href="faqs.html" class="text-gray-300 hover:text-white transition-colors">
+                                FAQs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="text-gray-300 hover:text-white transition-colors">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-6">Contact Us</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary-500 mr-3 flex-shrink-0 mt-1"></i>
+                            <span class="text-gray-300">
+                                102, Oyemekun Road, Opposite Oyemekun Grammar School, Akure, Ondo State
+                            </span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-primary-500 mr-3 flex-shrink-0"></i>
+                            <a href="tel:07076612860" class="text-gray-300 hover:text-white transition-colors">
+                                07076612860
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-primary-500 mr-3 flex-shrink-0"></i>
+                            <a href="mailto:info@prosperacredit.com" class="text-gray-300 hover:text-white transition-colors">
+                                info@prosperacredit.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Branch Locations -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-6">Our Branches</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">Akure</li>
+                        <li class="text-gray-300">Ondo</li>
+                        <li class="text-gray-300">Ore</li>
+                        <li class="text-gray-300">Okitipupa</li>
+                        <li class="text-gray-300">Igbokoda</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-gray-800 text-center md:flex md:justify-between md:text-left">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; <span id="current-year">2023</span> Prospera Credit. All rights reserved.
+                </p>
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 justify-center">
+                    <a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">
+                        Privacy Policy
+                    </a>
+                    <a href="terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">
+                        Terms of Service
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/loan-calculator.js"></script>
+</body>
+</html>

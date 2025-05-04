@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Prospera Credit</title>
+    <meta name="description" content="Get in touch with Prospera Credit. Contact our team for inquiries about our loan products, application process, or to visit one of our branches.">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configure Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Main brand colors
+                        primary: {
+                            50: "#e0f7fa",
+                            100: "#b2ebf2",
+                            200: "#80deea",
+                            300: "#4dd0e1",
+                            400: "#26c6da",
+                            500: "#00bcd4",
+                            600: "#0891b2", // Main primary color
+                            700: "#0288d1",
+                            800: "#0277bd",
+                            900: "#01579b",
+                        },
+                        // Warm gold/yellow for prosperity
+                        prosperity: {
+                            50: "#fff9e6",
+                            100: "#ffefc0",
+                            200: "#ffe499",
+                            300: "#ffd966",
+                            400: "#ffc933",
+                            500: "#ffbf00", // Main prosperity color
+                            600: "#e6ac00",
+                            700: "#cc9900",
+                            800: "#b38600",
+                            900: "#996600",
+                        },
+                        // Green for growth
+                        growth: {
+                            50: "#e8f5e9",
+                            100: "#c8e6c9",
+                            200: "#a5d6a7",
+                            300: "#81c784",
+                            400: "#66bb6a",
+                            500: "#4caf50", // Main growth color
+                            600: "#43a047",
+                            700: "#388e3c",
+                            800: "#2e7d32",
+                            900: "#1b5e20",
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'medium': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="font-sans antialiased">
+    <!-- Navbar (Same as index.html) -->
+    <nav class="bg-white shadow-md transition-all duration-300 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-24 items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="text-3xl font-bold text-cyan-600">
+                        Prospera Credit
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-cyan-600 text-lg font-medium">
+                        Home
+                    </a>
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-cyan-600 px-0 text-lg flex items-center" id="about-dropdown-btn">
+                            About Us
+                            <i class="fas fa-chevron-down ml-1 h-5 w-5 transition-transform"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-10 hidden" id="about-dropdown">
+                            <a href="about.html" class="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 text-base">
+                                Who We Are
+                            </a>
+                            <a href="about.html#board" class="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 text-base">
+                                Board of Directors
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-cyan-600 px-0 text-lg flex items-center" id="products-dropdown-btn">
+                            Products
+                            <i class="fas fa-chevron-down ml-1 h-5 w-5 transition-transform"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-10 hidden" id="products-dropdown">
+                            <a href="products.html#quick-loan" class="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 text-base">
+                                Quick Loan
+                            </a>
+                            <a href="products.html#payday-loan" class="block px-4 py-3 text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 text-base">
+                                Payday Loan
+                            </a>
+                        </div>
+                    </div>
+                    <a href="careers.html" class="text-gray-700 hover:text-cyan-600 text-lg font-medium">
+                        Careers
+                    </a>
+                    <a href="faqs.html" class="text-gray-700 hover:text-cyan-600 text-lg font-medium">
+                        FAQs
+                    </a>
+                    <a href="contact.html" class="text-gray-700 hover:text-cyan-600 text-lg font-medium">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-cyan-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden bg-white shadow-lg hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50">
+                    Home
+                </a>
+                <div class="relative">
+                    <button id="mobile-about-btn" class="w-full text-left px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 flex justify-between items-center">
+                        About Us
+                        <i class="fas fa-chevron-down h-5 w-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-about-dropdown" class="pl-4 space-y-1 hidden">
+                        <a href="about.html" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-600 hover:text-cyan-600 hover:bg-cyan-50">
+                            Who We Are
+                        </a>
+                        <a href="about.html#board" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-600 hover:text-cyan-600 hover:bg-cyan-50">
+                            Board of Directors
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <button id="mobile-products-btn" class="w-full text-left px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 flex justify-between items-center">
+                        Products
+                        <i class="fas fa-chevron-down h-5 w-5 transition-transform"></i>
+                    </button>
+                    <div id="mobile-products-dropdown" class="pl-4 space-y-1 hidden">
+                        <a href="products.html#quick-loan" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-600 hover:text-cyan-600 hover:bg-cyan-50">
+                            Quick Loan
+                        </a>
+                        <a href="products.html#payday-loan" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-600 hover:text-cyan-600 hover:bg-cyan-50">
+                            Payday Loan
+                        </a>
+                    </div>
+                </div>
+                <a href="careers.html" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50">
+                    Careers
+                </a>
+                <a href="faqs.html" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50">
+                    FAQs
+                </a>
+                <a href="contact.html" class="block px-3 py-3 rounded-md text-lg font-medium text-gray-700 hover:text-cyan-600 hover:bg-cyan-50">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="font-sans">
+        <!-- Hero Section -->
+        <section class="bg-gray-50 py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Contact Us</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Have questions or need assistance? Our team is here to help you with all your financial needs.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-primary-50 p-8 rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-phone h-8 w-8 text-primary-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Phone</h3>
+                        <p class="text-gray-600 mb-4">Call us for immediate assistance</p>
+                        <a href="tel:07076612860" class="text-primary-600 font-bold text-lg hover:underline">
+                            07076612860
+                        </a>
+                    </div>
+                    
+                    <div class="bg-prosperity-50 p-8 rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-prosperity-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-envelope h-8 w-8 text-prosperity-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Email</h3>
+                        <p class="text-gray-600 mb-4">Send us an email anytime</p>
+                        <a href="mailto:info@prosperacredit.com" class="text-prosperity-600 font-bold text-lg hover:underline">
+                            info@prosperacredit.com
+                        </a>
+                    </div>
+                    
+                    <div class="bg-growth-50 p-8 rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-growth-100 rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-clock h-8 w-8 text-growth-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Business Hours</h3>
+                        <p class="text-gray-600 mb-4">We're available during these hours</p>
+                        <ul class="text-gray-700">
+                            <li class="mb-1">Monday - Friday: 8:00 AM - 5:00 PM</li>
+                            <li>Saturday: 9:00 AM - 1:00 PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form & Map -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-8">Send Us a Message</h2>
+                        
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="form-success" class="bg-green-50 border border-green-200 rounded-xl p-8 text-center hidden">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-paper-plane h-8 w-8 text-green-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Message Sent Successfully!</h3>
+                            <p class="text-gray-600 mb-6">
+                                Thank you for contacting us. Our team will get back to you soon.
+                            </p>
+                            <button 
+                                id="send-another-btn"
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all bg-primary-600 text-white hover:bg-primary-700 px-4 py-2"
+                            >
+                                Send Another Message
+                            </button>
+                        </div>
+                        
+                        <!-- Contact Form -->
+                        <form id="contact-form" class="bg-white rounded-xl shadow-soft p-8">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 mb-2 font-medium">Full Name</label>
+                                    <input
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-600 focus:outline-none"
+                                        placeholder="Your name"
+                                    />
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-gray-700 mb-2 font-medium">Email Address</label>
+                                    <input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-600 focus:outline-none"
+                                        placeholder="Your email"
+                                    />
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="phone" class="block text-gray-700 mb-2 font-medium">Phone Number</label>
+                                    <input
+                                        id="phone"
+                                        name="phone"
+                                        type="tel"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-600 focus:outline-none"
+                                        placeholder="Your phone number"
+                                    />
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-gray-700 mb-2 font-medium">Subject</label>
+                                    <select
+                                        id="subject"
+                                        name="subject"
+                                        required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-600 focus:outline-none"
+                                    >
+                                        <option value="">Select a subject</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                        <option value="Loan Application">Loan Application</option>
+                                        <option value="Repayment">Repayment</option>
+                                        <option value="Complaint">Complaint</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2 font-medium">Message</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    required
+                                    rows="5"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-600 focus:outline-none"
+                                    placeholder="How can we help you?"
+                                ></textarea>
+                            </div>
+                            
+                            <button
+                                type="submit"
+                                class="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all bg-primary-600 text-white hover:bg-primary-700 py-3 text-lg"
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-8">Visit Our Branches</h2>
+                        
+                        <div class="bg-white rounded-xl shadow-soft overflow-hidden mb-8">
+                            <div class="aspect-video w-full bg-gray-200 flex items-center justify-center text-gray-500">
+                                <!-- Placeholder for map -->
+                                <div class="text-center p-8">
+                                    <i class="fas fa-map-marked-alt text-4xl mb-4"></i>
+                                    <p>Interactive Map Would Go Here</p>
+                                    <p class="text-sm mt-2">You can integrate Google Maps here</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="border border-gray-200 rounded-xl p-6 hover:border-primary-600 hover:shadow-soft transition-all duration-300">
+                                <h3 class="text-xl font-bold text-primary-600 mb-3">Akure (Head Office)</h3>
+                                <div class="flex items-start mb-4">
+                                    <i class="fas fa-map-marker-alt text-primary-600 mr-3 flex-shrink-0 mt-1"></i>
+                                    <p class="text-gray-700">
+                                        102, Oyemekun Road, Opposite Oyemekun Grammar School, Akure, Ondo State
+                                    </p>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-phone text-primary-600 mr-3 flex-shrink-0"></i>
+                                    <p class="text-gray-700">07076612860</p>
+                                </div>
+                            </div>
+                            
+                            <div class="border border-gray-200 rounded-xl p-6 hover:border-primary-600 hover:shadow-soft transition-all duration-300">
+                                <h3 class="text-xl font-bold text-primary-600 mb-3">Ondo</h3>
+                                <div class="flex items-start mb-4">
+                                    <i class="fas fa-map-marker-alt text-primary-600 mr-3 flex-shrink-0 mt-1"></i>
+                                    <p class="text-gray-700">
+                                        Main Street, Ondo Town
+                                    </p>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-phone text-primary-600 mr-3 flex-shrink-0"></i>
+                                    <p class="text-gray-700">07076612860</p>
+                                </div>
+                            </div>
+                            
+                            <div class="border border-gray-200 rounded-xl p-6 hover:border-primary-600 hover:shadow-soft transition-all duration-300">
+                                <h3 class="text-xl font-bold text-primary-600 mb-3">Ore</h3>
+                                <div class="flex items-start mb-4">
+                                    <i class="fas fa-map-marker-alt text-primary-600 mr-3 flex-shrink-0 mt-1"></i>
+                                    <p class="text-gray-700">
+                                        Benin-Sagamu Expressway, Ore
+                                    </p>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-phone text-primary-600 mr-3 flex-shrink-0"></i>
+                                    <p class="text-gray-700">07076612860</p>
+                                </div>
+                            </div>
+                            
+                            <div class="border border-gray-200 rounded-xl p-6 hover:border-primary-600 hover:shadow-soft transition-all duration-300">
+                                <h3 class="text-xl font-bold text-primary-600 mb-3">Okitipupa</h3>
+                                <div class="flex items-start mb-4">
+                                    <i class="fas fa-map-marker-alt text-primary-600 mr-3 flex-shrink-0 mt-1"></i>
+                                    <p class="text-gray-700">
+                                        Central Area, Okitipupa
+                                    </p>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-phone text-primary-600 mr-3 flex-shrink-0"></i>
+                                    <p class="text-gray-700">07076612860</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Frequently Asked Questions</h2>
+                
+                <div class="max-w-3xl mx-auto bg-gray-50 rounded-xl shadow-soft p-8">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">How do I apply for a loan?</h3>
+                            <p class="text-gray-600">
+                                You can apply for a loan by visiting any of our branches, filling out the online application form on our website, or contacting our customer service team.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">How long does it take to get a loan?</h3>
+                            <p class="text-gray-600">
+                                Once all required documents are submitted, you can receive your loan within 1-3 business days.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">What documents do I need to apply?</h3>
+                            <p class="text-gray-600">
+                                You'll need a valid ID, proof of business, and bank statements (where applicable). A guarantor is also required.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <a href="faqs.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all border border-primary-600 text-primary-600 hover:bg-primary-50 px-4 py-2">
+                            View All FAQs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-primary-600">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-white mb-6">Ready to Get Started?</h2>
+                <p class="text-xl text-white opacity-90 max-w-3xl mx-auto mb-10">
+                    Apply for a loan today and take the first step toward growing your business.
+                </p>
+                <a href="apply.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all bg-white text-primary-600 hover:bg-gray-100 px-8 py-3 text-lg">
+                    Apply For a Loan
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-gray-900 text-white pt-16 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Prospera Credit</h3>
+                    <p class="text-gray-300 mb-4">
+                        Driving financial inclusion and economic empowerment through innovative credit solutions.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://facebook.com" class="text-gray-300 hover:text-primary-500 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com" class="text-gray-300 hover:text-primary-500 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com" class="text-gray-300 hover:text-primary-500 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com" class="text-gray-300 hover:text-primary-500 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="about.html" class="text-gray-300 hover:text-white transition-colors">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products.html" class="text-gray-300 hover:text-white transition-colors">
+                                Our Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="careers.html" class="text-gray-300 hover:text-white transition-colors">
+                                Careers
+                            </a>
+                        </li>
+                        <li>
+                            <a href="faqs.html" class="text-gray-300 hover:text-white transition-colors">
+                                FAQs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="text-gray-300 hover:text-white transition-colors">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-6">Contact Us</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary-500 mr-3 flex-shrink-0 mt-1"></i>
+                            <span class="text-gray-300">
+                                102, Oyemekun Road, Opposite Oyemekun Grammar School, Akure, Ondo State
+                            </span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-primary-500 mr-3 flex-shrink-0"></i>
+                            <a href="tel:07076612860" class="text-gray-300 hover:text-white transition-colors">
+                                07076612860
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-primary-500 mr-3 flex-shrink-0"></i>
+                            <a href="mailto:info@prosperacredit.com" class="text-gray-300 hover:text-white transition-colors">
+                                info@prosperacredit.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Branch Locations -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-6">Our Branches</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">Akure</li>
+                        <li class="text-gray-300">Ondo</li>
+                        <li class="text-gray-300">Ore</li>
+                        <li class="text-gray-300">Okitipupa</li>
+                        <li class="text-gray-300">Igbokoda</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-gray-800 text-center md:flex md:justify-between md:text-left">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; <span id="current-year">2023</span> Prospera Credit. All rights reserved.
+                </p>
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 justify-center">
+                    <a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">
+                        Privacy Policy
+                    </a>
+                    <a href="terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">
+                        Terms of Service
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
